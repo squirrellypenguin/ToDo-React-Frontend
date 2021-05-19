@@ -71,10 +71,14 @@ const selectTodo = (todo) => {
     <div className="App">
       <h1>GTD SITE</h1>
       <hr />
-      <Link to="/create">
-  <button>Add Task</button>
-    </Link>
+
       <main>
+      <div>
+        <h3>BUILDOUT SIDEBAR</h3>
+        <Link to="/create">
+         <button>Add Task</button>
+    </Link>
+      </div>
       <Switch>
         <Route
             exact

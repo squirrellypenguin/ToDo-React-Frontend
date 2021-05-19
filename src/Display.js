@@ -3,20 +3,21 @@ import React from "react";
 const Display = (props) => {
   const {todos } = props
   const loaded = () => (
-    <div style={{textAlign: "center"}}>
+    <div id="body" style={{textAlign: "center"}}>
+        
       {todos.map((todo) => (
        <article key={todo._id}>
        
        <h1>{todo.name}</h1>
        <h3>{todo.body}</h3>
-       <h3>{todo.done}</h3>
-       <button onClick={() => {
+       <h3>{todo.done ? "Done" : "Undone" }</h3>
+       <button id="edit" onClick={() => {
             props.selectTodo(todo)
             props.history.push("/edit")
           }}>
             edit
           </button>
-          <button onClick={() => {
+          <button id="delete"onClick={() => {
             props.deleteTodo(todo)
           }}>
             Delete
