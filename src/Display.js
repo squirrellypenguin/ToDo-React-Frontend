@@ -4,19 +4,20 @@ const Display = (props) => {
   const {todos } = props
   const loaded = () => (
     <div style={{textAlign: "center"}}>
-      {todos.map((dog) => (
-       <article key={dog._id}>
-       <img src={dog.img}/>
-       <h1>{dog.name}</h1>
-       <h3>{dog.age}</h3>
+      {todos.map((todo) => (
+       <article key={todo._id}>
+       
+       <h1>{todo.name}</h1>
+       <h3>{todo.body}</h3>
+       <h3>{todo.done}</h3>
        <button onClick={() => {
-            props.selectDog(dog)
+            props.selectTodo(todo)
             props.history.push("/edit")
           }}>
             edit
           </button>
           <button onClick={() => {
-            props.deleteDog(dog)
+            props.deleteTodo(todo)
           }}>
             Delete
           </button>
